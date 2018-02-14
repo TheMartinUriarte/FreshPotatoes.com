@@ -20,4 +20,19 @@ function getFilmRecommendations(req, res) {
   res.status(200).send('Sanity Check');
 }
 
+$.ajax({
+  method: 'GET',
+  url: 'http://credentials-api.generalassemb.ly/4576f55f-c427-4cfc-a11c-5bfe914ca6c1',
+  success: handleSuccess,
+  error: handleError
+});
+
+function handleSuccess(json) {
+  console.log('json successfully loaded');
+}
+
+function handleError(xhr, status, errorThrown) {
+  console.log('ERR: json unsuccessfully loaded');
+}
+
 module.exports = app;
